@@ -1,0 +1,29 @@
+﻿@model Frontend.Models.Data.ViewModel.ArduinoViewModel
+
+@{
+    ViewData["Title"] = "ActivateDevice";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+<br />
+
+<div class="container" style="margin-bottom:18rem">
+    <div class="row">
+        <div class="col-md-4">
+            <h3 class="title-5 m-b-35">Activation of device</h3>
+            <form asp-action="ActivateDevice">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="SerialNumber" class="control-label"></label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Click to activate device" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+ </div>
+
+    

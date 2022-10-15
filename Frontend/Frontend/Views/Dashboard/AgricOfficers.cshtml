@@ -1,0 +1,152 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Frontend.Models.Data
+@model IEnumerable<Frontend.Models.Data.ViewModel.ArduinoViewModel>
+
+
+@inject SignInManager<ApplicationUser> _SignInManager
+@inject UserManager<ApplicationUser> _UserManager
+
+@{
+    ViewData["Title"] = "AddArduino";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+
+<!---Breadcrumb-->
+<section class="au-breadcrumb2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="au-breadcrumb-content">
+                    <div class="au-breadcrumb-left">
+                        <span class="au-breadcrumb-span">You are here:</span>
+                        <ul class="list-unstyled list-inline au-breadcrumb__list">
+                            <li class="list-inline-item active">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="list-inline-item seprate">
+                                <span>/</span>
+                            </li>
+                            <li class="list-inline-item">Dashboard</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---Breadcrumb-->
+<!-- WELCOME-->
+<section class="welcome p-t-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @if (_SignInManager.IsSignedIn(User))
+                {
+                    <h1 class="title-4">
+                        Welcome back
+                        <span>@_UserManager.GetUserAsync(User).Result.FirstName !</span>
+                    </h1>
+                }
+
+                <hr class="line-seprate">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END WELCOME-->
+<!-- STATISTIC-->
+<section class="statistic statistic2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="statistic__item statistic__item--green">
+                    <h2 class="number">@ViewBag.GetArduinoDevicesRegisteredByAgricExtOfficer</h2>
+                    <span class="desc">Registerd Devices</span>
+                    <div class="icon">
+                        <i class="zmdi zmdi-account-o"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="statistic__item statistic__item--orange">
+                    <h2 class="number">@ViewBag.GetArduinoDevicesRegisteredByAgricExtOfficerAndOnsite</h2>
+                    <span class="desc">Onsite devices</span>
+                    <div class="icon">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="statistic__item statistic__item--blue">
+                    <h2 class="number">@ViewBag.GetFarmersByOfficerRegistration</h2>
+                    <span class="desc">Farmers</span>
+                    <div class="icon">
+                        <i class="zmdi zmdi-nature-people"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="statistic__item statistic__item--red">
+                    <h2 class="number">@ViewBag.GetfarmsByOfficerRegistration</h2>
+                    <span class="desc">Farms</span>
+                    <div class="icon">
+                        <i class="fa fa-tree"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END STATISTIC-->
+<!-- DATA TABLE-->
+<section class="p-t-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title-5 m-b-35">Devices registered by you</h3>
+                <div class="card shadow">
+                    <div class="card-body border-primary">
+                        <table id="deviceTable" class="table table-hover table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.SerialNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Vid)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Pid)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Bn)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LastPowerOnDate)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LastPowerOnTime)
+                                    </th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END DATA TABLE-->
+
+
+@section Scripts{
+
+    <script src="~/js/Tables/AgricOfficerDevicesList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

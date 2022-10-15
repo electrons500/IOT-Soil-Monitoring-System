@@ -1,0 +1,137 @@
+﻿@model Frontend.Models.Data.ViewModel.ArduinoViewModel
+
+@{
+    ViewData["Title"] = "ArduinoDetails";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+
+
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <h1>View Device information</h1>
+            <br />
+            <div>
+                <table class="table">
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.Bn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Bn)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.Vid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Vid)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.Pid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Pid)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.SerialNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SerialNumber)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.DeploymentDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DeploymentDate)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.IsActivated)
+                        </td>
+                        <td>
+                            @ViewBag.IsActivated
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.DateOfActivation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DateOfActivation)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.IsOnsite)
+                        </td>
+                        <td>
+                            @ViewBag.IsOnsite
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.IsActive)
+                        </td>
+                        <td>
+                            @ViewBag.IsActive
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.LastPowerOnDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.LastPowerOnDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            @Html.DisplayNameFor(model => model.LastPowerOnTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.LastPowerOnTime)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">
+                            Registered by
+                        </td>
+                        <td>
+                            @ViewBag.username
+                        </td>
+                    </tr>
+
+                </table>
+                <br />
+
+                <nav class="navbar navbar-light bg-light">
+                    <a class="btn btn-success" asp-action="@ViewBag.path"><span class="fa fa-tractor"></span> Back to device list</a>&nbsp;
+                    <button class="btn btn-secondary text-white" style="cursor:pointer" onclick="Print()"><span class="fa fa-print"></span> Print</button>
+
+                </nav>
+            </div>
+        </div>
+        </div>
+    </div>
+
+            <script type="text/javascript">
+                function Print() {
+                    window.print();
+                }
+            </script>

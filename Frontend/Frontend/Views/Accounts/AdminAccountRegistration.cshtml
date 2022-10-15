@@ -1,0 +1,156 @@
+﻿@model Frontend.Models.Data.ViewModel.AccountRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Account Registration";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<style type="text/css">
+    .b-radius {
+        border-radius: 100px;
+    }
+
+    .form-shape {
+        max-width: 1000px;
+        padding-top: 6vh;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="form-shape">
+    <div class="card" style="border-radius:10px">
+        <div class="card-body">
+            <form asp-action="AdminAccountRegistration">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="login-logo">
+                    <a href="#">
+                        <span class="fa fa-user-circle fa-6x"></span>
+                    </a>
+                    <h2 class="text-primary">Account registration</h2>
+                </div>
+                <div class="row">
+
+                    <div class="form-group col-md-4">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="au-input au-input--full" type="text" placeholder="Firstname" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label asp-for="MiddleName"></label>
+                        <input asp-for="MiddleName" class="au-input au-input--full" type="text" placeholder="Middlename" />
+                        <span asp-validation-for="MiddleName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" class="au-input au-input--full" type="text" placeholder="Lastname" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="BirthDate"></label>
+                            <input asp-for="BirthDate" class="au-input au-input--full" value="@DateTime.Now" />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="GenderId"></label>
+                            <select asp-for="GenderId" asp-items="Model?.GenderList" class="form-control">
+                                <option>Select gender</option>
+                            </select>
+                            <span asp-validation-for="GenderId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Place of birth</label>
+                            <input asp-for="HomeTown" class="au-input au-input--full" type="text" placeholder="Place of birth" />
+                            <span asp-validation-for="HomeTown" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="RegionId"></label>
+                            <select asp-for="RegionId" asp-items="Model?.RegionList" class="form-control">
+                                <option>Select region</option>
+                            </select>
+                            <span asp-validation-for="RegionId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Residence"></label>
+                            <input asp-for="Residence" class="au-input au-input--full" type="text" placeholder="Residence" />
+                            <span asp-validation-for="Residence" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Address"></label>
+                            <input asp-for="Address" class="au-input au-input--full" type="text" placeholder="Address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="ContactNumber"></label>
+                            <input asp-for="ContactNumber" class="au-input au-input--full" type="tel" placeholder="Contact number" />
+                            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input asp-for="EmailAdress" class="au-input au-input--full" type="email" placeholder="Email" />
+                            <span asp-validation-for="EmailAdress" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="au-input au-input--full" type="password" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input asp-for="ConfirmPassword" class="au-input au-input--full" type="password" placeholder="Password" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="login-checkbox">
+                    <label>
+                        <input type="checkbox" name="aggree">I agree on the terms and policy
+                    </label>
+                </div>
+                <button class="au-btn au-btn--block au-btn--blue2 m-b-20 " style="border-radius: 100px;" type="submit">Register</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model Frontend.Models.Data.ViewModel.FarmMapLocationViewModel
+
+@{
+    ViewData["Title"] = "FarmMaplocationDetails";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <h1>Farm map information</h1>
+            <div class="row" style="margin-top:20px">
+                <table class="table">
+                    <tr>
+                        <td style="font-weight:bolder">Farm name: </td>
+                        <td>@Html.DisplayFor(model => model.FarmName)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Location: </td>
+                        <td>@Html.DisplayFor(model => model.FarmLocation)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Latitude: </td>
+                        <td>@Html.DisplayFor(model => model.Latitude)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">Longitude: </td>
+                        <td>@Html.DisplayFor(model => model.Longitude)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Description: </td>
+                        <td>@Html.DisplayFor(model => model.Descriptions)</td>
+                    </tr>
+                   
+                </table>
+                <br />
+
+                <nav class="navbar navbar-light bg-light">
+                    <a class="btn btn-primary" asp-action="EditFarmMapLocationDetails" asp-route-id="@Model.MaplocationId"><span class="fa fa-user-edit"></span> Edit map coordinates</a> &nbsp;
+                    <a class="btn btn-success" target="_blank" href="@ViewBag.googlemapURL" ><span class="fa fa-map-location"></span> Get Satellite direction</a>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+

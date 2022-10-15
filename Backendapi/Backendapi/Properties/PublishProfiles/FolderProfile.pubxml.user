@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Publish apps\IOTSMS\Backendapi</_PublishTargetUrl>
+    <History>True|2022-09-29T23:17:20.0647986Z;False|2022-09-29T23:17:10.6612030+00:00;True|2022-09-29T23:08:15.8066563+00:00;False|2022-09-29T23:07:45.4752919+00:00;True|2022-09-29T22:37:25.7559386+00:00;True|2022-09-17T07:44:34.6430312+00:00;False|2022-09-17T07:44:25.3855528+00:00;True|2022-09-17T07:18:35.3197129+00:00;False|2022-09-17T07:18:14.8779143+00:00;True|2022-09-17T05:21:10.9519694+00:00;False|2022-09-17T05:20:23.1525458+00:00;True|2022-09-16T21:23:13.2316603+00:00;False|2022-09-16T21:22:38.1099308+00:00;True|2022-09-16T15:27:31.3113573+00:00;True|2022-09-16T14:46:33.7937684+00:00;True|2022-09-16T14:44:15.9994210+00:00;True|2022-09-16T14:42:20.8369179+00:00;</History>
+  </PropertyGroup>
+</Project>

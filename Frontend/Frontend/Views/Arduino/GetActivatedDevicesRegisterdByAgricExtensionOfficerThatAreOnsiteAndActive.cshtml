@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.ArduinoViewModel>
+
+@{
+    ViewData["Title"] = "GetActivatedDevicesRegisterdByAgricExtensionOfficerThatAreOnsiteAndActive";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="title-5 m-b-35">List of Active devices on farms</h3>
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <a asp-action="ActivateDevice" style="background: #95C942;color:#ffffff " class="btn btn-light"><span class="fa fa-plus"></span> Activate device </a>
+                </div>
+                <div class="card-body">
+                    <table id="activatedDevicesOnsiteAndActiveTable" class="table table-hover table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SerialNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Bn)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsActivated)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsOnsite)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsActive)
+                                </th>
+
+
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+
+    <script src="~/js/Tables/GetActivatedDevicesRegisterdByAgricExtensionOfficerThatAreOnsiteAndActiveList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

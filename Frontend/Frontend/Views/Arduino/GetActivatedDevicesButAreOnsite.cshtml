@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.ArduinoViewModel>
+@{
+    ViewData["Title"] = "GetActivatedDevicesButAreOnsite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List of activated devices and on farm</h1>
+
+<br />
+<p>
+    <a asp-action="AddArduino" style="background: #95C942;color:#ffffff " class="btn btn-light"><span class="fa fa-plus"></span> Add new device </a>
+</p>
+
+<div class="card shadow">
+    <div class="card-body">
+        <table id="activatedDevicesButAreOnsiteTable" class="table table-hover table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SerialNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Vid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Bn)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsActivated)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsOnsite)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+
+        </table>
+
+    </div>
+</div>
+
+@section Scripts{
+
+    <script src="~/js/Tables/GetActivatedDevicesAndAreOnsiteList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

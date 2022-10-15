@@ -1,0 +1,61 @@
+﻿@model Frontend.Models.Data.ViewModel.FarmViewModel
+
+@{
+    ViewData["Title"] = "Farm Details";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <h1>Farm information</h1>
+            <div class="row" style="margin-top:20px">
+                <table class="table">
+                    <tr>
+                        <td style="font-weight:bolder">Farm name: </td>
+                        <td>@Html.DisplayFor(model => model.FarmName)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Location: </td>
+                        <td>@Html.DisplayFor(model => model.Location)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Region: </td>
+                        <td>@Html.DisplayFor(model => model.RegionName)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">Soil Category: </td>
+                        <td>@Html.DisplayFor(model => model.SoilCategoryName)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Farmer name: </td>
+                        <td>@Html.DisplayFor(model => model.FarmerName)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">Contact: </td>
+                        <td>@Html.DisplayFor(model => model.FarmerContact)</td>
+                    </tr>
+
+                </table>
+                <br />
+
+                <nav class="navbar navbar-light bg-light">
+                    <a class="btn btn-primary" asp-action="EditFarmerDetails" asp-route-id="@Model.FarmerId"><span class="fa fa-user-edit"></span> Edit farmer information</a> &nbsp;
+                    <a class="btn btn-success" asp-action="Index"><span class="fa fa-tractor"></span> Back to farmer list</a>&nbsp;
+                    <button class="btn btn-secondary text-white" style="cursor:pointer" onclick="Print()"><span class="fa fa-print"></span> Print</button>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            <script type="text/javascript">
+                function Print() {
+                    window.print();
+                }
+            </script>

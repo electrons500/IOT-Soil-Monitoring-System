@@ -32,7 +32,7 @@ This project is developed to help farmers im my country to monitor their farms e
   - Email: david@gmail.com
   - password: Admin@123
  
-     # Agric Officer page
+  # Agric Officer page
     Navigate to [this is a link](https://localhost:44304/Accounts/Login)
   - Email: monica@gmail.com
   - password: Monica@123

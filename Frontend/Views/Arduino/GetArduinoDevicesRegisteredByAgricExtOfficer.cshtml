@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.ArduinoViewModel>
+
+@{
+    ViewData["Title"] = "GetArduinoDevicesRegisteredByAgricExtOfficer";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+
+}
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="title-5 m-b-35">List of registered devices</h2>
+                </div>
+                <div class="col-md-4">
+                    <a asp-action="RegisteredArduinoReport" class="btn btn-outline-primary offset-6"><span class="fa fa-paperclip"></span> Generate report </a>
+                </div>
+
+            </div>
+            <div class="card shadow m-2">
+                <div class="card-header bg-transparent">
+                    <a asp-action="ActivateDevice" style="background: #95C942;color:#ffffff " class="btn btn-light"><span class="fa fa-plus"></span> Activate device </a>
+                </div>
+                <div class="card-body">
+                    <table id="arduinoTable" class="table table-hover table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SerialNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Vid)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pid)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Bn)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LastPowerOnDate)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script src="~/js/Tables/GetArduinoDevicesRegisteredByAgricExtOfficerList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

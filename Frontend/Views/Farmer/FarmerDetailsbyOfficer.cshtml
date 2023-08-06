@@ -1,0 +1,72 @@
+﻿@model Frontend.Models.Data.ViewModel.FarmerViewModel
+
+@{
+    ViewData["Title"] = "Farmer Details";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+
+}
+
+
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            @if (Model.FarmerPhoto != null)
+            {
+                <img src="data:image/*;base64,@(Html.Raw(Convert.ToBase64String(Model.FarmerPhoto)))" alt="farmer logo" class="img-thumbnail" width="200" height="200" />
+            }
+            else
+            {
+                <img src="~/images/UserImage.jpg" alt="farmer logo" class="img-thumbnail" />
+            }
+
+
+            <div class="row" style="margin-top:20px">
+                <table class="table">
+                    <tr>
+                        <td style="font-weight:bolder">Name: </td>
+                        <td>@Html.DisplayFor(model => model.FullName)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Address: </td>
+                        <td>@Html.DisplayFor(model => model.Address)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Location: </td>
+                        <td>@Html.DisplayFor(model => model.Location)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bolder">Contact: </td>
+                        <td>@Html.DisplayFor(model => model.Contact)</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:bolder">Gender: </td>
+                        <td>@Html.DisplayFor(model => model.GenderName)</td>
+                    </tr>
+                </table>
+                <br />
+
+                <nav class="navbar navbar-light bg-light">
+                    <a class="btn btn-primary" asp-action="EditFarmerDetailsByOfficer" asp-route-id="@Model.FarmerId"><span class="fa fa-user-edit"></span> Edit farmer information</a> &nbsp;
+                    <a class="btn btn-success" asp-action="GetFarmersByOfficers"><span class="fa fa-tractor"></span> Back to farmer list</a>&nbsp;
+                    <button class="btn btn-secondary text-white" style="cursor:pointer" onclick="Print()"><span class="fa fa-print"></span> Print</button>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function Print() {
+        window.print();
+    }
+</script>

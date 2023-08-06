@@ -1,0 +1,261 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Home page</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="#" rel="icon">
+    <link href="#" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/LandingPage/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/LandingPage/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/LandingPage/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/LandingPage/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/LandingPage/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/LandingPage/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center ">
+        <div class="container-fluid container-xxl d-flex align-items-center">
+
+            <div id="logo" class="me-auto">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <h1><a asp-action="Index">SMART<span>SOILGH</span></a></h1>
+
+            </div>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <a class="buy-tickets scrollto" asp-controller="Accounts" asp-action="Login">Log in</a>
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1 class="mb-4 pb-0">
+                Better <span>Solutions</span> For Your <br>
+                Agricultural Business
+            </h1>
+            <p class="mb-4 pb-0">We are team of talented software developers to help farmers have a good yield.</p>
+            <a href="#" class="glightbox play-btn mb-4"></a> <!-- redirect to our youtube video here-->
+            <a class="about-btn scrollto" asp-controller="Accounts" asp-action="AgricExtAccountRegistration">Create an account</a>
+        </div>
+    </section><!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h2>About Us</h2>
+                        <h4 class="text-white">
+                            The survival of all humanity in every country is based on the agriculture especially crop farming.And the survival
+                            of the crop or any fruit yielding plant is based on the quality of soil.So we as software developers built IOT based apps
+                            to monitor the soil.We help Agricultural Extension officers to make better and informed decisions based on the data
+                            received from the soil.
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- End About Section -->
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery">
+
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Gallery</h2>
+                    <p>Check our gallery from the recent photos</p>
+                </div>
+            </div>
+
+            <div class="gallery-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><a href="~/LandingPage/images/1copy.jpg" class="gallery-lightbox"><img src="~/LandingPage/images/1copy.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/2.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/2.jpeg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/3.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/3.jpeg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/4.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/4.jpeg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/5.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/5.jpeg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/6.jpg" class="gallery-lightbox"><img src="~/LandingPage/images/6.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/7.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/7.jpeg" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><a href="~/LandingPage/images/8.jpeg" class="gallery-lightbox"><img src="~/LandingPage/images/8.jpeg" class="img-fluid" alt=""></a></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section><!-- End Gallery Section -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="section-bg">
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>You contact us through the any of these.</p>
+                </div>
+
+                <div class="row contact-info">
+
+                    <div class="col-md-4">
+                        <div class="contact-address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h3>Address</h3>
+                            <address>
+                                C/o Department of Computer Science <br>
+                                Kwame Nkrumah University Of Science & Technology <br>
+                                Private Mail Bag <br>
+                                Kumasi
+                            </address>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-phone">
+                            <i class="bi bi-phone"></i>
+                            <h3>Phone Number</h3>
+                            <p><a href="tel:+155895548855">+233546290555/+233554233131</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-email">
+                            <i class="bi bi-envelope"></i>
+                            <h3>Email</h3>
+                            <p><a href="mailto:smartsoilgh@knust.edu.gh">smartsoilgh@knust.edu.gh</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group col-md-6 mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h1 class="text-white">SMARTSOILGH</h1>
+                        <p>
+                            We will love to hear from you and also work with you as far as you want us to help you get better yield.
+                            Here in SMARTSOILGH we deliver the best result.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Gallery</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <strong>Address:</strong>  C/o Department of Computer Science <br>
+                            Kwame Nkrumah University Of Science & Technology <br>
+                            Private Mail Bag <br>
+                            Kumasi <br>
+
+                            <strong>Phone:</strong> +233546290555/+233554233131<br>
+                            <strong>Email:</strong> smartsoilgh@knust.edu.gh<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright @DateTime.Now.Year <strong>SMARTSOILGH</strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/LandingPage/assets/vendor/aos/aos.js"></script>
+    <script src="~/LandingPage/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/LandingPage/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/LandingPage/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/LandingPage/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/LandingPage/assets/js/main.js"></script>
+
+</body>
+
+</html>

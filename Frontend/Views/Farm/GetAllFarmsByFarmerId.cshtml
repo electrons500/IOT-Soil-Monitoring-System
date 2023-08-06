@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.FarmViewModel>
+
+@{
+    ViewData["Title"] = "Get farmer farms";
+    Layout = "~/Views/Shared/_AdminDashboardLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>List of Farmers farm</h1>
+                    <br />
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <table id="farmerFarmTable" class="table table-sm table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.FarmName)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Location)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.RegionId)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SoilCategoryId)
+                                        </th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+
+    <script src="~/js/Tables/GetAllFarmsByFarmerIdList.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+}

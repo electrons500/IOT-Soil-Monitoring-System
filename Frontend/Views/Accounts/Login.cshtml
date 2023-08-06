@@ -1,0 +1,77 @@
+﻿@model Frontend.Models.Data.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<style type="text/css">
+    .b-radius {
+        border-radius: 100px;
+    }
+   .Containerlogin {
+        max-width: 540px;
+        padding-top: 8vh;
+        margin: 0 auto;
+       
+    }
+
+    .content {
+        background: #fff;
+        padding: 30px 30px 20px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+
+</style>
+
+<div class="Containerlogin">
+   <div class="card p-1 bg-primary shadow-lg">
+       <div class="">
+           <div class="content shadow-lg" style="border-radius:10px;">
+
+               <div class="login-logo">
+                   <a href="#">
+                       <span class="fa fa-user-circle fa-6x"></span>
+                   </a>
+                   <br />
+                   <h2 class="text-primary">Sign in</h2>
+               </div>
+               <div class="login-form">
+                   <form method="post">
+                       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                       <div class="form-group">
+                           <label asp-for="EmailAdress"></label>
+                           <input asp-for="EmailAdress" class="au-input au-input--full" style="border-radius: 100px;" type="email" placeholder="Email">
+                           <span asp-validation-for="EmailAdress" class="text-danger"></span>
+                       </div>
+                       <div class="form-group">
+                           <label>Password</label>
+                           <input asp-for="Password" class="au-input au-input--full" style="border-radius: 100px;" type="password" placeholder="Password">
+                           <span asp-validation-for="Password" class="text-danger"></span>
+                       </div>
+                       <div class="login-checkbox">
+                           <label>
+                               <input type="checkbox" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                           </label>
+                           <label>
+                               <a href="#">Forgotten Password?</a>
+                           </label>
+                       </div>
+                       <button class="au-btn au-btn--block au-btn--blue2 m-b-20 shadow" style="border-radius: 100px;" type="submit">sign in</button>
+
+                   </form>
+                   <div class="register-link">
+                       <p>
+                           Don't you have account?
+                           <a asp-controller="Accounts" asp-action="AgricExtAccountRegistration">Sign Up Here</a>
+                       </p>
+                   </div>
+               </div>
+
+           </div>
+       </div>
+   </div>
+</div>

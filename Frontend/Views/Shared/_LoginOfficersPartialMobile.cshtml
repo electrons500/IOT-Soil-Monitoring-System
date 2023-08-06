@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Frontend.Models.Data
+
+@inject SignInManager<ApplicationUser> _SignInManager
+@inject UserManager<ApplicationUser> _UserManager
+
+
+
+@if (_SignInManager.IsSignedIn(User))
+{
+
+    <div class="account-wrap">
+        <div class="account-item account-item--style2 clearfix js-item-menu">
+            <div class="image">
+                @if (_UserManager.GetUserAsync(User).Result.ProfilePic != null)
+                {
+                    <a href="#">
+                        <img alt="user image" src="data:image/*;base64,@(Convert.ToBase64String(_UserManager.GetUserAsync(User).Result.ProfilePic))">
+                    </a>
+                }
+                else
+                {
+                    <a href="#">
+                        <img src="~/images/UserImage.jpg" alt="user image">
+                    </a>
+
+
+                }
+
+               
+            </div>
+            <div class="content">
+                <a class="js-acc-btn" href="#">
+                    <span>@_UserManager.GetUserAsync(User).Result.FirstName</span> &nbsp;
+                    <span>@_UserManager.GetUserAsync(User).Result.LastName</span>
+                </a>
+            </div>
+            <div class="account-dropdown js-dropdown">
+                <div class="info clearfix">
+                    <div class="image">
+                        @if (_UserManager.GetUserAsync(User).Result.ProfilePic != null)
+                        {
+                            <a href="#">
+                                <img alt="user image" src="data:image/*;base64,@(Convert.ToBase64String(_UserManager.GetUserAsync(User).Result.ProfilePic))">
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="#">
+                                <img src="~/images/UserImage.jpg" alt="user image">
+                            </a>
+
+
+                        }
+
+                    </div>
+                    <div class="content">
+                        <h5 class="name">
+                            <a href="#">
+                                <span>@_UserManager.GetUserAsync(User).Result.FirstName</span> &nbsp;
+                                <span>@_UserManager.GetUserAsync(User).Result.LastName</span>
+                            </a>
+                        </h5>
+                        <span class="email">@_UserManager.GetUserAsync(User).Result.Email</span> 
+                    </div>
+                </div>
+                <div class="account-dropdown__body">
+                    <div class="account-dropdown__item">
+                        <a asp-controller="Accounts" asp-action="UpdateOfficerDetails">
+                            <i class="zmdi zmdi-account"></i>Account
+                        </a>
+                    </div>
+                   
+                   
+                </div>
+                <div class="account-dropdown__footer">
+                    <a href="#">
+                        <i asp-controller="Accounts" asp-action="Logout"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

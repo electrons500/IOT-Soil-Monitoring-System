@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.FarmerViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+
+}
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="title-5 m-b-35">List of registered farmers</h2>
+                </div>
+                <div class="col-md-4">
+                    <a asp-action="RegisteredFarmersByOfficerReport" class="btn btn-outline-primary offset-6"><span class="fa fa-paperclip"></span> Generate report </a>
+                </div>
+
+            </div>
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <a asp-action="RegisterFarmer" style="background: #95C942;color:#ffffff " class="btn btn-light"><span class="fa fa-user-plus"></span> Add new farmer</a>
+                </div>
+                <div class="card-body">
+                    <table id="farmerTable" class="table table-sm table-hover  table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Photo
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Firstname)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Location)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Contact)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+
+    <script src="~/js/Tables/GetFarmersByOfficersList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.FarmViewModel>
+
+@{
+    ViewData["Title"] = "Get farms of a farmer";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+
+}
+
+<br />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-primary" role="alert">
+                <h3>List of farmers</h3>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <a asp-action="AddFarm" style="background: #95C942;color:#ffffff " class="btn btn-light"><span class="fa fa-user-plus"></span> Add new farm</a>
+                </div>
+                <div class="card-body">
+                    <table id="farmerFarmTable" class="table table-sm table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FarmName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Location)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RegionId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SoilCategoryId)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            @section Scripts{
+
+                <script src="~/js/Tables/GetAllFarmersfarmsList.js"></script>
+                <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+            }

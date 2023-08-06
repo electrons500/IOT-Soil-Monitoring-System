@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Frontend.Models.Data.ViewModel.SoilDataViewModel>
+
+@{
+    ViewData["Title"] = "SoilDataFromDevice";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-primary" role="alert">
+                <h3>List of soil data from this device</h3>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <table id="SoildataFromDeviceTable" class="table table-sm table-hover  table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SerialNumber)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SoilMoisture)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Temperature)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Humidity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Date)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script src="~/js/Tables/SoilDataFromDeviceList.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+}

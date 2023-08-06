@@ -1,0 +1,106 @@
+﻿@model Frontend.Models.Data.ViewModel.ArduinoViewModel
+@{
+    ViewData["Title"] = "Update device information";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+
+}
+
+
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form asp-action="UpdateArduinoByOfficer">
+                        <div class="card shadow">
+                            <div class="card-header bg-transparent">
+                                <h2 class="text-primary"><span class="fa fa-edit"></span> Edit Device information</h2>
+                            </div>
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="ArduinoId" />
+                                <div class="form-group">
+                                    <label asp-for="SerialNumber" class="control-label"></label>
+                                    <input asp-for="SerialNumber" class="form-control" />
+                                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Vid" class="control-label"></label>
+                                    <input asp-for="Vid" class="form-control" />
+                                    <span asp-validation-for="Vid" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Pid" class="control-label"></label>
+                                    <input asp-for="Pid" class="form-control" />
+                                    <span asp-validation-for="Pid" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Bn" class="control-label"></label>
+                                    <input asp-for="Bn" class="form-control" />
+                                    <span asp-validation-for="Bn" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group" hidden>
+                                    <label asp-for="DeploymentDate" class="control-label"></label>
+                                    <input asp-for="DeploymentDate" class="form-control" />
+                                    <span asp-validation-for="DeploymentDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="IsActivated" class="control-label"></label>
+                                    <input asp-for="IsActivated" class="form-control" />
+                                    <span asp-validation-for="IsActivated" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="DateOfActivation" class="control-label"></label>
+                                    <input asp-for="DateOfActivation" class="form-control" />
+                                    <span asp-validation-for="DateOfActivation" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="LastPowerOnDate" class="control-label"></label>
+                                    <input asp-for="LastPowerOnDate" class="form-control" />
+                                    <span asp-validation-for="LastPowerOnDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="LastPowerOnTime" class="control-label"></label>
+                                    <input asp-for="LastPowerOnTime" class="form-control" />
+                                    <span asp-validation-for="LastPowerOnTime" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="IsActive" class="control-label"></label>
+                                    <input asp-for="IsActive" class="form-control" />
+                                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="IsOnsite" class="control-label"></label>
+                                    <input asp-for="IsOnsite" class="form-control" />
+                                    <span asp-validation-for="IsOnsite" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" hidden>
+                                    <label asp-for="UserId" class="control-label"></label>
+                                    <input asp-for="UserId" class="form-control" />
+                                    <span asp-validation-for="UserId" class="text-danger"></span>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block"><span class="fa fa-save"></span> Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <a asp-action="GetArduinoDevicesRegisteredByAgricExtOfficer" class="btn btn-danger btn-block"><span class="fa fa-backward"></span> Back to List</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Frontend.Models.Data
+
+@inject SignInManager<ApplicationUser> _SignInManager
+@inject UserManager<ApplicationUser> _UserManager
+
+
+
+@if (_SignInManager.IsSignedIn(User))
+{
+
+    <div class="account2">
+        <div class="image img-cir img-120">
+            @if (_UserManager.GetUserAsync(User).Result.ProfilePic != null)
+            {
+                <img  alt="user image" src="data:image/*;base64,@(Convert.ToBase64String(_UserManager.GetUserAsync(User).Result.ProfilePic))">
+            }
+            else
+            {
+                <img src="~/images/UserImage.jpg"  alt="user image">
+            }
+        </div>
+        <h4 class="name">
+            <span>@_UserManager.GetUserAsync(User).Result.FirstName</span> &nbsp;
+            <span>@_UserManager.GetUserAsync(User).Result.LastName</span>
+        </h4>
+        <a asp-controller="Accounts" asp-action="Logout">Sign out</a>
+    </div>
+
+
+}

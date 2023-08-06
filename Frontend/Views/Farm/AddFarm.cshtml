@@ -1,0 +1,102 @@
+﻿@model Frontend.Models.Data.ViewModel.FarmViewModel
+
+@{
+    ViewData["Title"] = "AddFarm";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-10" >
+            <h3 class="title-5 m-b-35">Farm Information</h3>
+                    <form asp-action="AddFarm">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="card shadow">
+                            <div class="card-header bg-transparent">
+                                <h2 style="color: #95C942"><span class="fa fa-tractor"></span> Add farm information</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label asp-for="FarmName" class="control-label"></label>
+                                            <input asp-for="FarmName" class="form-control" />
+                                            <span asp-validation-for="FarmName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                   
+
+                                </div>
+                                 <div class="row">
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="Location" class="control-label"></label>
+                                             <input asp-for="Location" class="form-control" />
+                                             <span asp-validation-for="Location" class="text-danger"></span>
+                                         </div>
+                                     </div>
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="RegionId" class="control-label"></label>
+                                             <select asp-for="RegionId" asp-items="Model?.RegionList" class="form-control">
+                                                 <option>Select Region of Location</option>
+                                             </select>
+                                             <span asp-validation-for="RegionId" class="text-danger"></span>
+                                         </div>
+                                     </div>
+
+                                </div>
+                                 <div class="row">
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="Latitude" class="control-label"></label>
+                                             <input asp-for="Latitude" class="form-control" />
+                                             <span asp-validation-for="Latitude" class="text-danger"></span>
+                                         </div>
+                                     </div>
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="Longitude" class="control-label"></label>
+                                             <input asp-for="Longitude" class="form-control" />
+                                             <span asp-validation-for="Longitude" class="text-danger"></span>
+                                         </div>
+                                     </div>
+
+                                </div>
+                                 <div class="row">
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="SoilCategoryId" class="control-label"></label>
+                                             <select asp-for="SoilCategoryId" asp-items="Model?.SoilCategoryList" class="form-control">
+                                                 <option>Select soil category</option>
+                                             </select>
+                                             <span asp-validation-for="SoilCategoryId" class="text-danger"></span>
+                                         </div>
+                                     </div>
+                                     <div class="col-md">
+                                         <div class="form-group">
+                                             <label asp-for="SerialNumber" class="control-label"></label>
+                                             <input asp-for="SerialNumber" class="form-control" />
+                                             <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                                         </div>
+
+                                     </div>
+
+                                </div>
+                                
+  
+                             
+                                <div class="form-group" style="margin-top:10px">
+                                    <button type="submit" class="btn btn-light btn-block" style="background: #95C942;color:#ffffff"><span class="fa fa-save"></span> Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    </div>
+

@@ -1,0 +1,83 @@
+﻿@model  IEnumerable<Frontend.Models.Data.ViewModel.FarmMapLocationViewModel>
+@{
+    ViewData["Title"] = "Satellite map of farms";
+    Layout = "~/Views/Shared/_OfficerDashboardLayout.cshtml";
+}
+
+<script type='text/javascript'>
+
+    function loadMapScenario() {
+
+        map = new Microsoft.Maps.Map('#myMap', {
+            zoom: 7
+        });
+
+        //Create an infobox at the center of the map but don't show it.
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+
+        //Assign the infobox to a map instance.
+        infobox.setMap(map);
+
+        
+
+        function pushpinCoordinates(Latitude, Longitude, Title, Description) {
+            var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(Latitude, Longitude));
+
+            //Store some metadata with the pushpin.
+            pin.metadata = {
+                title: Title,
+                description: Description
+            };
+
+            //Add a click event handler to the pushpin.
+            Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+
+            //Add pushpin to the map.
+            map.entities.push(pin);
+        }
+
+
+
+        
+            @foreach (var item in Model)
+             {
+                 @:pushpinCoordinates(@item.Latitude,@item.Longitude,'@item.Title','@item.Descriptions');
+
+             }
+         
+
+
+            function pushpinClicked(e) {
+                //Make sure the infobox has metadata to display.
+                if (e.target.metadata) {
+                    //Set the infobox options with the metadata of the pushpin.
+                    infobox.setOptions({
+                        location: e.target.getLocation(),
+                        title: e.target.metadata.title,
+                        description: e.target.metadata.description,
+                        visible: true
+                    });
+                }
+
+            }
+
+
+    }
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AsgCoyf_VXBc4LaD3hIfxO0oTGF6bXlYprbQis54dvc9_rgxAAPXBU-K9aNdc1PC&callback=loadMapScenario' async defer></script>
+
+<br />
+<h1>Satellite location of farms</h1>
+
+    <div class="section__content section__content--p30" style="margin-top:30px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 map">
+                    <div id="myMap" style="width:100%; height:610px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
